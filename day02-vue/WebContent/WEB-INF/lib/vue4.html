@@ -6,22 +6,19 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/vue.js"></script>
 </head>
 <body>
-	<div id="app">
-		<input type="text"  v-model="num">
-		<h3>{{info}}H1909C有{{num}}位同学</h3>
-		<button v-on:click="num++">加</button>
-		<button @click="num--">减</button>
+	<div id ='app'>
+		<input type="checkbox" v-model="hobby" value="足球">足球
+		<input type="checkbox" v-model="hobby" value="篮球">篮球
+		<input type="checkbox" v-model="hobby" value="乒乓球">乒乓球
+		<input type="checkbox" v-model="hobby" value="排球">排球
 	</div>
 	<script type="text/javascript">
-		//实例化VUE对象
 		var app = new Vue({
 			el:"#app",
 			data:{
-				info:"小实训",
-				num:44
+				hobby:[]
 			}
-			
-		});//JSON格式 {"key":value,"key1":value}
+		})
 	
 	</script>
 </body>

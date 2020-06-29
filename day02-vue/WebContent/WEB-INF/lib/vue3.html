@@ -6,22 +6,25 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/vue.js"></script>
 </head>
 <body>
-	<div id="app">
-		<input type="text"  v-model="num">
-		<h3>{{info}}H1909C有{{num}}位同学</h3>
-		<button v-on:click="num++">加</button>
-		<button @click="num--">减</button>
+	<div id ='app'>
+		{{num}}
+		<form>
+			姓名:<input type="text" v-model="user.name">
+			所在方向:<input type="text" v-model="user.grade">
+		</form>
 	</div>
 	<script type="text/javascript">
-		//实例化VUE对象
 		var app = new Vue({
 			el:"#app",
 			data:{
-				info:"小实训",
-				num:44
+				user:{}
+			},
+			created(){
+				this.num=19,
+				this.user.name="马丽娅",
+				this.user.grade="大数据"
 			}
-			
-		});//JSON格式 {"key":value,"key1":value}
+		})
 	
 	</script>
 </body>
