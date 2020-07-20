@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/echarts.js"></script>
+</head>
+<body>
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    
+    <script type="text/javascript">
+    
+	 // 基于准备好的dom，初始化echarts实例  
+	    var myChart = echarts.init(document.getElementById('main'));  
+	
+	    // 指定图表的配置项和数据  
+	    option = {  
+	     title : {  
+	         text: '专业学生统计表', 
+	         x:'right'  
+	      },  
+	     tooltip : {  
+	         trigger: 'item',  
+	         // a -- name   b -- x轴的data   c -- 产品的value值  d -- echarts算出来的百分比  
+	         formatter: "{a} <br/>{b} : {c} ({d}%)"  
+	     },  
+	     legend: {  
+	         orient: 'vertical', // 排列的顺序 vertical竖向排列 horizontal横向排列  
+	         left: 'left',  
+	         data: ['大数据','物联网','全栈']  
+	     },  
+	     series : [  
+	         {  
+	             name: '访问来源',  
+	             type: 'pie',  
+	             radius : '45%',  
+	             center: ['20%', '45%'],  
+	             data:[  
+	                 {value:120, name:'大数据'},  
+	                 {value:30, name:'物联网'},  
+	                 {value:50, name:'全栈'}  
+	             ]
+	         }  
+	     ]  
+	 };  
+	
+	 // 使用刚指定的配置项和数据显示图表。  
+	 myChart.setOption(option);  
+
+    </script>
+</body>
+</html>
